@@ -6,7 +6,7 @@
 	<parameter name="username" value="Jamna"/>
 	<parameter name="password" value="jamna123"/>
 	<test name="ParameterTest">
-		<parameter name="browserName" value="edge"/>
+		<parameter name="browserName" value="Chrome"/>
 		<classes>
 			<class name="firstTestNG.parameterstest">
 				<methods>
@@ -20,7 +20,7 @@
 	</test> <!--
 	ParameterTest -->
 	<test name="ParameterTestTwo">
-		<parameter name="browserName" value="Chrome"/>
+		<parameter name="browserName" value="edge"/>
 		<classes>
 			<class name="firstTestNG.parameterstest">
 				<methods>
