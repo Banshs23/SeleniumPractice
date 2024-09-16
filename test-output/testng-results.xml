@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-03T16:33:59 IST" name="Default suite" finished-at="2024-09-03T16:34:00 IST" duration-ms="1034">
+    <groups>
+    </groups>
+    <test started-at="2024-09-03T16:33:59 IST" name="Default test" finished-at="2024-09-03T16:34:00 IST" duration-ms="1034">
+      <class name="dataProvider.UsingCDP">
+        <test-method signature="fetchData(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:dataProvider.UsingCDP@4c1909a3]" started-at="2024-09-03T16:34:00 IST" name="fetchData" data-provider="login" finished-at="2024-09-03T16:34:00 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Aus]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Russia]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchData -->
+        <test-method signature="fetchData(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:dataProvider.UsingCDP@4c1909a3]" started-at="2024-09-03T16:34:00 IST" name="fetchData" data-provider="login" finished-at="2024-09-03T16:34:00 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Canada]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[USA]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[China]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchData -->
+        <test-method signature="fetchData(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:dataProvider.UsingCDP@4c1909a3]" started-at="2024-09-03T16:34:00 IST" name="fetchData" data-provider="login" finished-at="2024-09-03T16:34:00 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Swizterland]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Sweden]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Japan]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchData -->
+      </class> <!-- dataProvider.UsingCDP -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
