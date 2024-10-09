@@ -8,13 +8,71 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">SampleTest</th></tr>
-<tr><td><a href="#t0">Sample</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">50</td><td></td><td></td></tr>
+<tr><th colspan="8">ParameterSuite</th></tr>
+<tr><td><a href="#t0">ParameterTest</a></td><td class="num">2</td><td class="num attn">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">35,295</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">ParameterTestTwo</a></td><td class="num">2</td><td class="num attn">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">34,313</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">4</th><th class="num attn">2</th><th class="num">0</th><th class="num attn">2</th><th class="num">69,608</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">SampleTest</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Sample &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">firstTestNG.sampletest</td><td><a href="#m0">test1</a></td><td rowspan="1">1727224715099</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m1">test2</a></td><td rowspan="1">1727224715114</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m2">test3</a></td><td rowspan="1">1727224715115</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">ParameterSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ParameterTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">firstTestNG.parameterstest</td><td><a href="#m0">NavigatetoMyInfo</a></td><td rowspan="1">1727226017617</td><td rowspan="1">22498</td></tr><tr><th colspan="4">ParameterTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">firstTestNG.parameterstest</td><td><a href="#m1">verifyLogin</a></td><td rowspan="1">1727226040133</td><td rowspan="1">0</td></tr><tr><th colspan="4">ParameterTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">firstTestNG.parameterstest</td><td><a href="#m2">EnterLoginDetails</a></td><td rowspan="1">1727226016611</td><td rowspan="1">1006</td></tr><tr class="passedeven"><td><a href="#m3">Launchapp</a></td><td rowspan="1">1727226006433</td><td rowspan="1">10167</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">ParameterTestTwo &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">firstTestNG.parameterstest</td><td><a href="#m4">NavigatetoMyInfo</a></td><td rowspan="1">1727226053244</td><td rowspan="1">20018</td></tr><tr><th colspan="4">ParameterTestTwo &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">firstTestNG.parameterstest</td><td><a href="#m5">verifyInfo</a></td><td rowspan="1">1727226073262</td><td rowspan="1">0</td></tr><tr><th colspan="4">ParameterTestTwo &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">firstTestNG.parameterstest</td><td><a href="#m6">EnterLoginDetails</a></td><td rowspan="1">1727226051833</td><td rowspan="1">1407</td></tr><tr class="passedeven"><td><a href="#m7">Launchapp</a></td><td rowspan="1">1727226041560</td><td rowspan="1">10271</td></tr></tbody>
 </table>
-<h2>Sample</h2><h3 id="m0">firstTestNG.sampletest#test1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">firstTestNG.sampletest#test2</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">firstTestNG.sampletest#test3</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ParameterTest</h2><h3 id="m0">firstTestNG.parameterstest#NavigatetoMyInfo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;My Info&apos;]&quot;}
+  (Session info: chrome=129.0.6668.59)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.20&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8d918e8127556b3639a6611995aea353, findElement {using=xpath, value=//span[text()=&apos;My Info&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.59, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\YASHPA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54152}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54152/devtoo..., se:cdpVersion: 129.0.6668.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d918e8127556b3639a6611995aea353
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at firstTestNG.parameterstest.NavigatetoMyInfo(parameterstest.java:76)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">firstTestNG.parameterstest#verifyLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method firstTestNG.parameterstest.verifyLogin() on instance firstTestNG.parameterstest@69e153c5 depends on not successfully finished methods 
+[firstTestNG.parameterstest.NavigatetoMyInfo() on instance firstTestNG.parameterstest@69e153c5]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">firstTestNG.parameterstest#EnterLoginDetails</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Jamna</td><td>jamna123</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">firstTestNG.parameterstest#Launchapp</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ParameterTestTwo</h2><h3 id="m4">firstTestNG.parameterstest#NavigatetoMyInfo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;My Info&apos;]&quot;}
+  (Session info: MicrosoftEdge=129.0.2792.52)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.20&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [a9867cc9fe9851d6f150b8539b5a7dcf, findElement {using=xpath, value=//span[text()=&apos;My Info&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 129.0.2792.52, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:54183}, msedge: {msedgedriverVersion: 129.0.2792.52 (6462e8fc16ec..., userDataDir: C:\Users\YASHPA~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54183/devtoo..., se:cdpVersion: 129.0.2792.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a9867cc9fe9851d6f150b8539b5a7dcf
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at firstTestNG.parameterstest.NavigatetoMyInfo(parameterstest.java:76)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">firstTestNG.parameterstest#verifyInfo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method firstTestNG.parameterstest.verifyInfo() on instance firstTestNG.parameterstest@353352b6 depends on not successfully finished methods 
+[firstTestNG.parameterstest.NavigatetoMyInfo() on instance firstTestNG.parameterstest@353352b6]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">firstTestNG.parameterstest#EnterLoginDetails</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>Jamna</td><td>jamna123</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">firstTestNG.parameterstest#Launchapp</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
