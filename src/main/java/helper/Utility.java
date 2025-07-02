@@ -2,9 +2,10 @@ package helper;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -275,72 +276,75 @@ public class Utility {
 	 * 
 	 */
 
-	public static void Findbrokenlinks(WebDriver driver, By Locator, By addalllocator, String Attribute,
-			String containstext) throws MalformedURLException, IOException {
-		List<WebElement> linkslist = driver.findElements(Locator);
-		linkslist.addAll(driver.findElements(addalllocator));
+	public static void FindBrokenLinks(WebDriver driver, By locator, By additionalLocator, String attribute,
+			String excludeIfContains) throws IOException, InterruptedException {
 
-		System.out.println("Size of full links and images ----->" + linkslist.size());
+		List<WebElement> elements = driver.findElements(locator);
+		elements.addAll(driver.findElements(additionalLocator));
 
-		List<WebElement> activelinks = new ArrayList<WebElement>();
+		System.out.println("Total links/images found: " + elements.size());
 
-		for (int i = 0; i < linkslist.size(); i++) {
-			// System.out.println(linkslist.get(i).getAttribute("href"));
-			if (linkslist.get(i).getAttribute(Attribute) != null
-					&& (!linkslist.get(i).getAttribute(Attribute).contains(containstext))) {
-				activelinks.add(linkslist.get(i));
+		List<String> validUrls = new ArrayList<>();
+
+		for (WebElement element : elements) {
+			String url = element.getAttribute(attribute);
+			if (url != null && !url.contains(excludeIfContains)) {
+				validUrls.add(url);
 			}
 		}
 
-		System.out.println("Size of active links and images ----->" + activelinks.size());
+		System.out.println("Active links/images to check: " + validUrls.size());
 
-		for (int j = 0; j < activelinks.size(); j++) {
+		HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build();
 
-			HttpURLConnection connection = (HttpURLConnection) new URL(activelinks.get(j).getAttribute(Attribute))
-					.openConnection();
+		for (String url : validUrls) {
+			try {
+				HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).timeout(Duration.ofSeconds(10))
+						.GET().build();
 
-			connection.connect();
-			String response = connection.getResponseMessage();
-			int statuscode = connection.getResponseCode();
-			connection.disconnect();
+				HttpResponse<Void> response = client.send(request, HttpResponse.BodyHandlers.discarding());
 
-			System.out.println(activelinks.get(j).getAttribute(Attribute) + " ----> " + statuscode + " " + response);
+				System.out.println(url + " --> " + response.statusCode());
+			} catch (Exception e) {
+				System.out.println(url + " --> ERROR: " + e.getMessage());
+			}
 		}
 	}
 
-	public static void Findbrokenlinks(WebDriver driver, By Locator, By addalllocator, String Attribute,
-			String containstext, String containstexts) throws MalformedURLException, IOException {
-		List<WebElement> linkslist = driver.findElements(Locator);
-		linkslist.addAll(driver.findElements(addalllocator));
+	public static void FindBrokenLinks(WebDriver driver, By primaryLocator, By secondaryLocator, String attribute,
+			String excludeIfContains, String alsoExcludeIfContains) throws IOException, InterruptedException {
 
-		System.out.println("Size of full links and images ----->" + linkslist.size());
+		List<WebElement> elements = driver.findElements(primaryLocator);
+		elements.addAll(driver.findElements(secondaryLocator));
 
-		List<WebElement> activelinks = new ArrayList<WebElement>();
+		System.out.println("Total links/images found: " + elements.size());
 
-		for (int i = 0; i < linkslist.size(); i++) {
-			// System.out.println(linkslist.get(i).getAttribute("href"));
-			if (linkslist.get(i).getAttribute(Attribute) != null
-					&& (!linkslist.get(i).getAttribute(Attribute).contains(containstext))) {
-				activelinks.add(linkslist.get(i));
+		List<String> validUrls = new ArrayList<>();
+
+		for (WebElement el : elements) {
+			String url = el.getAttribute(attribute);
+			if (url != null && !url.contains(excludeIfContains)) {
+				validUrls.add(url);
 			}
 		}
 
-		System.out.println("Size of active links and images ----->" + activelinks.size());
+		System.out.println("Filtered active links: " + validUrls.size());
 
-		for (int j = 0; j < activelinks.size(); j++) {
-			if ((!activelinks.get(j).getAttribute(Attribute).contains(containstexts))) {
-				HttpURLConnection connection = (HttpURLConnection) new URL(activelinks.get(j).getAttribute(Attribute))
-						.openConnection();
+		HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build();
 
-				connection.connect();
-				String response = connection.getResponseMessage();
-				int statuscode = connection.getResponseCode();
-				connection.disconnect();
+		for (String url : validUrls) {
+			if (!url.contains(alsoExcludeIfContains)) {
+				try {
+					HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).timeout(Duration.ofSeconds(10))
+							.GET().build();
 
-				System.out
-						.println(activelinks.get(j).getAttribute(Attribute) + " ----> " + statuscode + " " + response);
+					HttpResponse<Void> response = client.send(request, HttpResponse.BodyHandlers.discarding());
+
+					System.out.println(url + " --> " + response.statusCode());
+				} catch (Exception e) {
+					System.out.println(url + " --> ERROR: " + e.getMessage());
+				}
 			}
-
 		}
 	}
 

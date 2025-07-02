@@ -18,7 +18,9 @@ public class Utilitycheck {
 		
 		Thread.sleep(2000);
 		
-		//Utility.Findbrokenlinks(By.tagName("a"), By.tagName("img"), "href", "javascript","mailto");
+		//Utility.FindBrokenLinks(driver, By.tagName("a"), By.tagName("img"), "href", "javascript","mailto");
+		
+		//Utility.FindBrokenLinks(driver,By.tagName("a"), By.tagName("img"), "href", "javascript");
 		
 		Utility.getElementWithHighlight(driver,By.xpath("//input[contains(@placeholder,'E-mail')]"), 2).sendKeys("usangular@yopmail.com");
 		Utility.getElementWithHighlight(driver,By.xpath("//input[contains(@type,'password')]"), 2).sendKeys("Count@123");

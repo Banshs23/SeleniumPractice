@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Linksbroken {
+public class OLDWaysLinksbroken {
 
 	public static void main(String[] args) throws MalformedURLException, IOException, InterruptedException {
 
@@ -42,6 +42,7 @@ public class Linksbroken {
 
 		for (int j = 0; j < activelinks.size(); j++) {
 			if ((!activelinks.get(j).getAttribute("href").contains("mailto"))) {
+				@SuppressWarnings("deprecation")
 				HttpURLConnection connection = (HttpURLConnection) new URL(activelinks.get(j).getAttribute("href"))
 						.openConnection();
 
